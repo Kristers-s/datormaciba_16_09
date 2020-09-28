@@ -1,0 +1,79 @@
+    1  VirtualBox --startvm XP
+    2  quartus
+    3  echo $PATH
+    4  echo $?
+    5  pwd
+    6  git clone https://github.com/Kristers-s/datormaciba_16_09
+    7  ls -lt
+    8  cd datromaciba_16_09
+    9  cd datormaciba_16_09
+   10  ls -lt
+   11  cat README.md
+   12  pwd
+   13  nano first.c
+   14  ls -lt
+   15  gcc first.c
+   16  ls -lt
+   17  ./a/out
+   18  ./a.out
+   19  esho $?
+   20  echo $?
+   21  ./a.out
+   22  echo $?
+   23  cat first.c
+   24  cat a.out
+   25  ls -lt
+   26  cp first.c second.c
+   27  ls -lt
+   28  nano second.c
+   29  ls -lt
+   30  gcc second.c
+   31  ls -lt
+   32  gcc first.c -o first.out
+   33  ls -lt
+   34  gcc second.c -o first.out
+   35  ls -lt
+   36  gcc first.c -o first.out
+   37  gcc second.c -o second.out
+   38  ls -lt
+   39  cp first.c first_error_1.c
+   40  ls -lt
+   41  nano first_error_1.c
+   42  gcc first_error_1.c
+   43  ls -lt
+   44  gcc first_error_1.c
+   45  echo $?
+   46  cp firct.c helloWRLD.c
+   47  cp first.c helloWRLD.c
+   48  nano helloWRLD.c
+   49  ls -lt
+   50  gcc helloWRLD.c
+   51  nano helloWRLD.c
+   52  gcc helloWRLD.c
+   53  nano helloWRLD.c
+   54  gcc helloWRLD.c
+   55  nano helloWRLD.c
+   56  gcc helloWRLD.c
+   57  ls -lt
+   58  ./a.out
+   59  nano helloWRLD.c
+   60  gcc helloWRLD.c
+   61  ./a.out
+   62  echo $?
+   63  nano helloWRLD.c
+   64  gcc helloWRLD.c
+   65  ./a.out
+   66  nano helloWRLD.c
+   67  gcc helloWRLD.c
+   68  ./a.out
+   69  ls -lt
+   70  nano helloWRLD.c
+   71  gcc helloWRLD.c
+   72  ./a.out
+   73  echo $?
+   74  nano helloWRLD.c
+   75  gcc helloWRLD.c
+   76  pwd
+   77  hsitor
+   78  history
+   79  history > history_20200928
