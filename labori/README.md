@@ -111,3 +111,6 @@ printf("Sakne atrodas pie x=%.3f, jo j0(x) ir %.3f\n",x,modified_bess(x,A));
 return 0;
 }
 ```
+### Apraksts
+```
+Darbā tika izmantota Dihotomijas metode, ar kuras palīdzību var noteikt "inverto izteiksmi", tas ir var noteikt x vērtību funkcijā f(x) pie Lietotajam nosakamas y vērtības, kādā apgabalā. Kā metode strādā? - noteiktais apgabals tiek sadalīts uz pusem, tad tiek noteikts, kurā pusē ir x. To apgabalu dala atkal divās daļās un procesu atkārto, līdz tas kļūst precīzs.```
