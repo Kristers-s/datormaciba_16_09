@@ -62,7 +62,8 @@ return 0;
 Šajā darbā tiek izmantotas Teilora rindas ar rekurences reizinātāju un parastā matemātiskā funkcija, lai nonāktu pie atbildes. Funkcijai tiek manuāli aprēķināts rekurences reizinātājs, kuru tālāk izmanto, lai tālāk tiktu pie atbildes. Attīstoties rindai, tā koverģē, kā rezultātā var nonāt pie atbildes.
 ```
 ## LD2 - Roots
-
+### Grafiks
+![Grafiks](/labori/besselsf_v2.png)
 ### kods
 
 ```
