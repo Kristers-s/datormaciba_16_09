@@ -59,7 +59,9 @@ return 0;
 ```
 ### Apraksts
 ``` 
-Šajā darbā tiek izmantotas Teilora rindas ar rekurences reizinātāju un parastā matemātiskā funkcija, lai nonāktu pie atbildes. Funkcijai tiek manuāli aprēķināts rekurences reizinātājs, kuru tālāk izmanto, lai tālāk tiktu pie atbildes. Attīstoties rindai, tā koverģē, kā rezultātā var nonāt pie atbildes.
+Šajā darbā tiek izmantotas Teilora rindas ar rekurences reizinātāju un parastā matemātiskā funkcija,
+lai nonāktu pie atbildes. Funkcijai tiek manuāli aprēķināts rekurences reizinātājs,
+kuru tālāk izmanto, lai tālāk tiktu pie atbildes. Attīstoties rindai, tā koverģē, kā rezultātā var nonāt pie atbildes.
 ```
 ## LD2 - Roots
 ### Grafiks
@@ -113,4 +115,59 @@ return 0;
 ```
 ### Apraksts
 ```
-Darbā tika izmantota Dihotomijas metode, ar kuras palīdzību var noteikt "inverto izteiksmi", tas ir var noteikt x vērtību funkcijā f(x) pie Lietotajam nosakamas y vērtības, kādā apgabalā. Kā metode strādā? - noteiktais apgabals tiek sadalīts uz pusem, tad tiek noteikts, kurā pusē ir x. To apgabalu dala atkal divās daļās un procesu atkārto, līdz tas kļūst precīzs.```
+Darbā tika izmantota Dihotomijas metode, ar kuras palīdzību var noteikt "inverto izteiksmi",
+tas ir var noteikt x vērtību funkcijā f(x) pie Lietotajam nosakamas y vērtības,
+kādā apgabalā. Kā metode strādā? - noteiktais apgabals tiek sadalīts uz pusem,
+tad tiek noteikts, kurā pusē ir x. To apgabalu dala atkal divās daļās un procesu atkārto,
+līdz tas kļūst precīzs.
+```
+## LD3-Derivative
+## Grafiks
+![Grafiks](/labori/derivative_v2.png)
+### Kods
+```
+#include<stdio.h>
+#include<math.h>
+#define N 1000
+
+double fp(double x) {
+return (x*cos(x/2) - (2*sin(x/2)))/x*x;
+}
+double fpp(double x) {
+ return (j1(x/2)/x) - ((1/4)*((2*sin(x/2))/x));
+}
+
+void main() {
+double a=0,b=0,delta_x=0.1;
+printf("ievadiet a vertibu:");
+scanf("%lf",&a);
+printf("ievadiet b vertibu:");
+scanf("%lf",&b);
+printf("ievadiet delta_x(sola vertibu):");
+scanf("%lf",&delta_x);
+double y[N], x[N], y_prim[N-1], y_2prim[N-2];
+int i;
+double c = sqrt(pow(a,2))+ sqrt(pow(b,2));
+for(i=0;i<(c/delta_x);i++) {
+x[i] = a + i*delta_x;
+y[i] = j0(x[i]/2);
+}
+for(i=0;i<(c/delta_x)-1;i++) {
+y_prim[i] = (y[i+1] -y[i])/(x[i+1]-x[i]);
+}
+for(i=0;i<(c/delta_x)-2;i++) {
+y_2prim[i] = (y_prim[i+1] -y_prim[i])/(x[i+1]-x[i]);
+}
+printf("\tx\t\tj0(x/2)\t\tskj0\'\tj0\'(x/2)\tskj0\"(x/2)\tj0\"(x/2)\n ");
+for(i=0;i<(c/delta_x)-2;i++) {
+printf("%10.4f\t%10.4f\t%10.4f\t%10.4f\t%10.4f\t%10.4f\n",x[i],y[i],fp(x[i]), y_prim[i],fpp(x[i]), y_2prim[i]);
+}
+
+}
+```
+### Apraksts
+```
+Uzdevumā tika rēķināts atvasinājums izmantojot 2 metodes: skaitlisko un analītisko.
+Skaitliskajā metodē atvasinājums tika rēkināts ar atvasinājumu pārveidojumiem no
+Wolfram alpha, bet analītiskajā metodē atvasinājums tika rēķināts ar difereneces palīdzību.
+```
