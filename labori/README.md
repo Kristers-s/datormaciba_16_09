@@ -123,7 +123,7 @@ līdz tas kļūst precīzs.
 ```
 ## LD3-Derivative
 ## Grafiks
-![Grafiks](/labori/derivative_v2.png)
+![Grafiks](/labori/derivative_v3.png)
 ### Kods
 ```
 #include<stdio.h>
@@ -131,10 +131,10 @@ līdz tas kļūst precīzs.
 #define N 1000
 
 double fp(double x) {
-return (x*cos(x/2) - (2*sin(x/2)))/x*x;
+return (-1)*j1(x/2)/2;
 }
 double fpp(double x) {
- return (j1(x/2)/x) - ((1/4)*((2*sin(x/2))/x));
+ return (j1(x/2)/(x*2)) - (j0(x/2)/4);
 }
 
 void main() {
