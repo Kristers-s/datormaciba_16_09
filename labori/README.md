@@ -246,4 +246,11 @@ printf("Integraalja veertiiba simsona metodei : %.2f(%d elementi)\n", integr2s, 
 ![Grafiks](/labori/integral_wolfram_alpha.PNG)
 ### Apraksts
 ```
-Uzdevumā tika izmantoti 3 integrēšanas veidi: taisnsturu metode, trapeču metode, Simpsona metode. Taisnstūra metodē tiek rēķināti taisnstūru lakumi, kuri ietilpst segmentā starp x asi un funkcijas garfiku. programma pieprasa, lai ievada 3 mainīgos, kurus izmanto, lai iegūtu abas noteiktās robežas un precizitāti, ar kuras palīdzību tiek apstādināts rēķināšanas cikls. Trapeču metode ir gandrīz identiska taisnsturu metodei, tikai tajā tiek izmantoti taisnleņķa trapeces laukums. Trešā metode - Simpsona metode, kurā tiek izmantotas parabolas, lai noteiktu integrāli. Ideja otrā cikla daļai šajā metodē tika ņemta, no https://www.bragitoff.com/2017/08/simpsons-13-rule-c-program/ .
+Uzdevumā tika izmantoti 3 integrēšanas veidi: taisnsturu metode, trapeču metode, Simpsona metode.
+Taisnstūra metodē tiek rēķināti taisnstūru lakumi, kuri ietilpst segmentā starp x asi un funkcijas garfiku.
+Programma pieprasa, lai ievada 3 mainīgos, kurus izmanto, lai iegūtu abas noteiktās robežas un precizitāti,
+ar kuras palīdzību tiek apstādināts rēķināšanas cikls. Trapeču metode ir gandrīz identiska taisnsturu metodei,
+tikai tajā tiek izmantoti taisnleņķa trapeces laukums.
+Trešā metode - Simpsona metode, kurā tiek izmantotas parabolas, lai noteiktu integrāli.
+Ideja otrā cikla daļai šajā metodē tika ņemta, no https://www.bragitoff.com/2017/08/simpsons-13-rule-c-program/ .
+```
