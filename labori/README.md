@@ -171,3 +171,86 @@ Uzdevumā tika rēķināts atvasinājums izmantojot 2 metodes: skaitlisko un ana
 Skaitliskajā metodē atvasinājums tika rēkināts ar atvasinājumu pārveidojumiem no
 Wolfram alpha, bet analītiskajā metodē atvasinājums tika rēķināts ar difereneces palīdzību.
 ```
+## 4LD Integrāļi
+### kods
+```
+#include<stdio.h>
+#include<math.h>
+void main(){
+float a,b,eps,h,integr2,integr1 = 0,integr2t,integr2s, summ,x;
+int k, n =2;
+printf("ievadiet a vertibu:");
+scanf("%f",&a);
+printf("ievadiet b vertibu:");
+scanf("%f",&b);
+printf("ievadiet eps:");
+scanf("%f",&eps);
+
+//taisnstura metode
+integr2 =(0.5)* (b-a) * (j0(a/2) + j0(b/2))/n;
+printf("%.3f    %.3f\n",integr1, integr2);
+while (fabs(integr2-integr1)>eps) {
+n*=2;
+h=(b-a)/n;
+integr1 = integr2;
+integr2 = 0;
+for(k=0; k<n; k++)
+integr2+=h*j0((a+(k+0.5)*h)/2);
+printf("%.3f    %.3f\n",integr1, integr2);
+}
+printf("Integraalja veertiiba taisnstura metodei : %2f(%d elementi)\n", integr2, n);
+//trapeces metode
+n=2;
+integr1 = 0;
+h = (b-a)/n;
+integr2 =(0.5)*h* (j0(a/2) + j0(b/2))/n;
+printf("%.3f    %.3f\n",integr1, integr2);
+while (fabs(integr2-integr1)>eps) {
+n*=2;
+h=(b-a)/n;
+integr1 = integr2;
+integr2 = 0;
+for(k=0; k<n; k++)
+integr2+=(h*(j0((a+k*h)/2)+j0((a+k*h+h)/2)))/2;
+printf("%.3f    %.3f\n",integr1, integr2);
+}
+printf("Integraalja veertiiba trapeces metodei : %.2f (%d elementi)\n", integr2,n);
+// simsona metode
+n = 2;
+integr1 = 0;
+h=(b-a)/n;
+integr2s =(h/3)+(j0(a/2) + j0(b/2)+4*j0((a+b)/4));
+printf("%.3f    %.3f\n",integr1, integr2s);
+while (fabs(integr2s-integr1)>eps) {
+n*=2;
+h=(b-a)/n;
+integr1 = integr2s;
+integr2s = 0;
+for(k=0; k<n; k++){
+x=a+k*h;
+if (k%2==0){
+summ = summ+2*j0(x/2);
+}
+else {
+summ = summ+4*j0(x/2);
+}
+}
+integr2s=(h/6)*(j0(a/2)+j0(b/2)+summ);
+printf("%.3f    %.3f\n",integr1, integr2s);
+}
+printf("Integraalja veertiiba simsona metodei : %.2f(%d elementi)\n", integr2s, n);
+}
+```
+### Grafiki
+![Grafiks](/labori/integral_v3.png)
+![Grafiks](/labori/integral_wolfram_alpha.PNG)
+### Apraksts
+```
+Uzdevumā tika izmantoti 3 integrēšanas veidi: taisnsturu metode, trapeču metode, Simpsona metode.
+Taisnstūra metodē tiek rēķināti taisnstūru lakumi, kuri ietilpst segmentā starp x asi un funkcijas garfiku.
+Programma pieprasa, lai ievada 3 mainīgos, kurus izmanto, lai iegūtu abas noteiktās robežas un precizitāti,
+ar kuras palīdzību tiek apstādināts rēķināšanas cikls. Trapeču metode ir gandrīz identiska taisnsturu metodei,
+tikai tajā tiek izmantoti taisnleņķa trapeces laukums.
+Trešā metode - Simpsona metode, kurā tiek izmantotas parabolas, lai noteiktu integrāli.
+Ideja otrā cikla daļai šajā metodē tika ņemta, no https://www.bragitoff.com/2017/08/simpsons-13-rule-c-program/ .
+```
